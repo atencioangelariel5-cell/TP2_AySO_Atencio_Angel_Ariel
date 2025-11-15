@@ -1,0 +1,46 @@
+    1  sudo fdisk -l
+    2  sudo fdisk /dev/sdd
+    3  free
+    4  free -h
+    5  sudo mkswap /dev/sdd1
+    6  free -h
+    7  sudo swapon /dev/sdd1
+    8  free -h
+    9  swapon -s
+   10  sudo fdisk /dev/sdc
+   11  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+   12  sudo wipefs -a /dev/sdc1
+   13  sudo wipefs -a /dev/sdc2
+   14  sudo wipefs -a /dev/sdd1
+   15  sudo wipefs -a /dev/sdd2
+   16  sudo wipefs -a /dev/sdd3
+   17  sudo wipefs -a /dev/sdd5
+   18  sudo wipefs -a /dev/sdd6
+   19  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+   20  sudo pvs
+   21  sudo vgcreate vg_datos /dev/sdc1 /dev/sdd2
+   22  sudo vgs
+   23  sudo pvs
+   24  sudo vgcreate vg_web /dev/sdc2
+   25  sudo pvs
+   26  sudo lvcreate -L 1G vg_web -n lv_web1
+   27  sudo lvcreate -L 512M vg_web -n lv_web2
+   28  sudo lvcreate -L 512M vg_web -n lv_web3
+   29  sudo lvs
+   30  sudo pvs
+   31  sudo fdisk -l
+   32  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1
+   33  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2
+   34  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   35  help
+   36  ls -l
+   37  sudo fdisk
+   38  sudo fdisk -l
+   39  git clone https://github.com/atencioangelariel5-cell/TP2_AySO_Atencio_Angel_Ariel.git
+   40  exit
+   41  ls -l
+   42  cd TP2_AySO_Atencio_Angel_Ariel/
+   43  sudo pvs > pvs.txt
+   44  sudo vgs > vgs.txt
+   45  sudo lvs > lvs.txt
+   46  history > historial_lvm.txt
